@@ -1,0 +1,61 @@
+system:
+  logLevel: debug           # 日志级别 建议debug或info
+  repeatCheckType: domain   # 重复过滤类型 域名=domain 网址=url
+
+result:
+  saveField:          # 需要存储的字段
+    engine: true
+    domain: true
+    url: true
+    title: true
+    description: false
+    ip: true
+    country: false
+    httpStatus: false
+  timeout: 10         # 获取数据的网络请求超时时间
+
+engine:
+  bing:
+    status: false
+    delay: 1
+    page: 1
+    language:
+    timeout: 10
+  yandex:
+    status: false
+    delay: 10
+    page: 5
+    language:
+    timeout: 10
+  qwant:
+    status: true
+    delay: 1
+    page: 8
+    language:
+    timeout: 10
+  google:
+    status: false
+    delay: 3
+    page: 8
+    language:
+    timeout: 10
+  sogou:
+    status: true
+    delay: 1
+    page: 8
+    language:
+    timeout: 10
+
+webhook:
+  status: false                   # 是否开启推送
+  url: http://127.0.0.1/receive   # 接收推送数据的地址
+
+proxy:
+  status: true           # 是否启动代理功能
+  local:
+    path: data/proxy.txt  # 文件路径
+  api:
+    url:                  # 访问地址
+    intervalTime: 10      # 自动更新时间(秒)
+    protocolType: http    # 协议类型,如http/socks4
+
